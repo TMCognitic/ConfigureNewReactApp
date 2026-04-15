@@ -25,8 +25,48 @@ Ajouter les extensions suivantes :
 - PostCSS Language Support (Utilisé pour le postcss de tailwind)
 - Tailwind CSS IntelliSense (pour l'auto completion dans VS Code lors de l'utilisation de Tailwind CSS)
 
-## Ajouter Tailwind
+## Installer stylistic en complément de eslint
+1. Installer le package
+``` bash
+npm install @stylistic/eslint-plugin --save-dev
+```
 
+2. Configurer eslint par le fichier 'eslint.config.js'
+``` js
+import js from '@eslint/js'
+import globals from 'globals'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import tseslint from 'typescript-eslint'
+import stylistic from '@stylistic/eslint-plugin' //<-- plugin pour la gestion du point-virgule obligatoire
+import { defineConfig, globalIgnores } from 'eslint/config'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    plugins: {
+      '@stylistic': stylistic //<--- activation du plugin
+    },
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      js.configs.recommended,
+      tseslint.configs.recommended,
+      reactHooks.configs.flat.recommended,
+      reactRefresh.configs.vite,
+    ],
+    languageOptions: {
+      ecmaVersion: 2025,
+      globals: globals.browser,
+    },
+    rules: {                                  //  Ajout des règles
+      "no-console": "warn",                   //  Warning s'il reste des console.log dans le code
+      "@stylistic/semi": ['error', 'always']  //  Erreur s'il manque des points-virgules
+    }                                         //
+  },
+]);
+```
+
+## Ajouter Tailwind
 La configuration peut changer attention [TailwindCss](https://tailwindcss.com/docs/installation/using-vite)
 
 1. Installer le packager npm
@@ -70,7 +110,6 @@ Résultat attendu :
 ![image](./Assets/Tailwind-css.png)
 
 ## Install DevExtreme
-
 1. Installer [DevExtreme](https://js.devexpress.com/React/Documentation/Guide/React_Components/Add_DevExtreme_to_a_React_Application/)
 ``` bash
 npm install devextreme@24.2 devextreme-react@24.2 --save --save-exact
