@@ -29,13 +29,13 @@ Ajouter les extensions suivantes :
 
 ## Installer stylistic en complément de eslint
 
-- Installer le package
+### Installer le package
 
 ``` bash
 npm install @stylistic/eslint-plugin --save-dev
 ```
 
-- Configurer eslint par le fichier 'eslint.config.js'
+### Configurer eslint par le fichier 'eslint.config.js'
   
 ``` js
 import js from '@eslint/js'
@@ -75,13 +75,13 @@ export default defineConfig([
 
 La configuration peut changer attention [TailwindCss](https://tailwindcss.com/docs/installation/using-vite)
 
-- Installer le packager npm
+### Installer le packager npm
 
 ``` bash
     npm install tailwindcss @tailwindcss/vite
 ```
 
-- Modifier le fichier vite.config.ts
+### Modifier le fichier vite.config.ts
 
 ``` TypeScript
 import { defineConfig } from 'vite';
@@ -97,13 +97,13 @@ export default defineConfig({
 });
 ```
 
-- Modifier le fichier index.css en ajoutant ceci en première ligne
+### Modifier le fichier index.css en ajoutant ceci en première ligne
 
 ``` css
 @import "tailwindcss";
 ```
 
-- Modifier le fichier App.tsx pour tester l'installation
+### Modifier le fichier App.tsx pour tester l'installation
 
 ``` TypeScript
 const App = () => {
@@ -121,13 +121,13 @@ Résultat attendu :
 
 ## Install DevExtreme
 
-- Installer [DevExtreme](https://js.devexpress.com/React/Documentation/Guide/React_Components/Add_DevExtreme_to_a_React_Application/)
+### Installer [DevExtreme](https://js.devexpress.com/React/Documentation/Guide/React_Components/Add_DevExtreme_to_a_React_Application/)
 
 ``` bash
 npm install devextreme@24.2 devextreme-react@24.2 --save --save-exact
 ```
 
-- importer le css dans main.tsx
+### importer le css dans main.tsx
 
 ``` TypeScript
 import { StrictMode } from 'react';
@@ -143,7 +143,7 @@ createRoot(document.getElementById('root')!).render(
 )
 ```
 
-- Tester l'installation avec app.tsx
+### Tester l'installation avec app.tsx
 
 ``` TypeScript
 import Button from 'devextreme-react/button';
@@ -170,13 +170,13 @@ Resultat attendu :
 
 ## Installer le React-Router-Dom
 
-- Installer le package via npm :
+### Installer le package via npm :
   
 ``` bash
 npm install react-router-dom
 ```
 
-- Configurer les routes dans main.tsx
+### Configurer les routes dans main.tsx
   
 ``` TypeScript
 import { StrictMode } from 'react';
