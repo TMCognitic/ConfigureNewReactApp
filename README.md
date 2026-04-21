@@ -6,13 +6,14 @@
     npm create vite@latest <project name directory> -- --template react-ts
 ```
 
-Exemples : 
-pour créer l'application dans le répertoire courant
+Exemples : pour créer l'application dans le répertoire courant
+
 ``` Bash
     npm create vite@latest . -- --template react-ts
 ```
-ou
-pour créer l'application dans le sous répertoire 'My-React-Project'
+
+ou pour créer l'application dans le sous répertoire 'My-React-Project'
+
 ``` Bash
     npm create vite@latest My-React-Project -- --template react-ts
 ```
@@ -20,18 +21,22 @@ pour créer l'application dans le sous répertoire 'My-React-Project'
 ## Configure VS Code
 
 Ajouter les extensions suivantes :
+
 - ES7 + React/Redux/React-Native snippets (fourni des snippet pour générés les éléments REACT)
 - ESLint (Ajoute une configuration supplémentaire à la compilation)
 - PostCSS Language Support (Utilisé pour le postcss de tailwind)
 - Tailwind CSS IntelliSense (pour l'auto completion dans VS Code lors de l'utilisation de Tailwind CSS)
 
 ## Installer stylistic en complément de eslint
-1. Installer le package
+
+- Installer le package
+
 ``` bash
 npm install @stylistic/eslint-plugin --save-dev
 ```
 
-2. Configurer eslint par le fichier 'eslint.config.js'
+- Configurer eslint par le fichier 'eslint.config.js'
+  
 ``` js
 import js from '@eslint/js'
 import globals from 'globals'
@@ -67,14 +72,17 @@ export default defineConfig([
 ```
 
 ## Ajouter Tailwind
+
 La configuration peut changer attention [TailwindCss](https://tailwindcss.com/docs/installation/using-vite)
 
-1. Installer le packager npm
+- Installer le packager npm
+
 ``` bash
     npm install tailwindcss @tailwindcss/vite
 ```
 
-2. Modifier le fichier vite.config.ts
+- Modifier le fichier vite.config.ts
+
 ``` TypeScript
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
@@ -89,12 +97,14 @@ export default defineConfig({
 });
 ```
 
-3. Modifier le fichier index.css en ajoutant ceci en première ligne
+- Modifier le fichier index.css en ajoutant ceci en première ligne
+
 ``` css
 @import "tailwindcss";
 ```
 
-4. Modifier le fichier App.tsx pour tester l'installation
+- Modifier le fichier App.tsx pour tester l'installation
+
 ``` TypeScript
 const App = () => {
   return (
@@ -110,12 +120,15 @@ Résultat attendu :
 ![image](./Assets/Tailwind-css.png)
 
 ## Install DevExtreme
-1. Installer [DevExtreme](https://js.devexpress.com/React/Documentation/Guide/React_Components/Add_DevExtreme_to_a_React_Application/)
+
+- Installer [DevExtreme](https://js.devexpress.com/React/Documentation/Guide/React_Components/Add_DevExtreme_to_a_React_Application/)
+
 ``` bash
 npm install devextreme@24.2 devextreme-react@24.2 --save --save-exact
 ```
 
-2. importer le css dans main.tsx
+- importer le css dans main.tsx
+
 ``` TypeScript
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
@@ -130,7 +143,8 @@ createRoot(document.getElementById('root')!).render(
 )
 ```
 
-3. Tester l'installation avec app.tsx
+- Tester l'installation avec app.tsx
+
 ``` TypeScript
 import Button from 'devextreme-react/button';
 
@@ -149,18 +163,21 @@ const App = () => {
 
 export default App
 ```
+
 Resultat attendu :
 
 ![Resultat](./Assets/DevExtreme.png)
 
 ## Installer le React-Router-Dom
 
-1. Installer le package via npm :
+- Installer le package via npm :
+  
 ``` bash
 npm install react-router-dom
 ```
 
-2. Configurer les routes dans main.tsx
+- Configurer les routes dans main.tsx
+  
 ``` TypeScript
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
@@ -183,10 +200,13 @@ createRoot(document.getElementById('root')!).render(
 ```
 
 Contenu de index.ts
+
 ``` TypeScript
 export { default as  HomeLayout } from "./HomeLayout";
 ```
+
 Contenu de HomeLayout.tsx
+
 ``` TypeScript
 const HomeLayout = () => {
   return (
